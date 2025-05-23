@@ -1,0 +1,13 @@
+version: "3.8"
+name: sose03
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: gordluser
+      POSTGRES_PASSWORD: gordlpassword
+      POSTGRES_DB: bank
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
