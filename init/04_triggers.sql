@@ -3,15 +3,15 @@ RETURNS TRIGGER AS $$
 DECLARE
     sender_balance DECIMAL;
 BEGIN
-    SELECT amount INTO sender_balance FROM accounts WHERE client_id = NEW.from_client_id;
+    SELECT amount INTO sender_balance FROM accounts WHERE id = NEW.from_client_id;
 
     IF sender_balance < NEW.amount THEN
         RAISE NOTICE 'Überweisung abgelehnt: Konto überzogen';
         RETURN NULL;
     END IF;
 
-    UPDATE accounts SET amount = amount - NEW.amount WHERE client_id = NEW.from_client_id;
-    UPDATE accounts SET amount = amount + NEW.amount WHERE client_id = NEW.to_client_id;
+    UPDATE accounts SET amount = amount - NEW.amount WHERE id = NEW.from_client_id;
+    UPDATE accounts SET amount = amount + NEW.amount WHERE id = NEW.to_client_id;
 
     RETURN NEW;
 END;

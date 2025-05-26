@@ -1,4 +1,4 @@
-INSERT INTO accounts (client_id, amount) VALUES
+INSERT INTO accounts (id, amount) VALUES
 (1, 1000.00),  -- Kunde 1
 (2, 500.00),   -- Kunde 2
 (3, 300.00);   -- Kunde 3
