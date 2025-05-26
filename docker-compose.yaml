@@ -1,8 +1,8 @@
-version: "3.8"
+
 name: sose03
 services:
   db:
-    image: postgres:15
+    image: postgres:latest
     environment:
       POSTGRES_USER: gordluser
       POSTGRES_PASSWORD: gordlpassword
