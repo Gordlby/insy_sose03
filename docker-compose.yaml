@@ -2,7 +2,7 @@
 name: sose03
 services:
   db:
-    image: postgres:latest
+    image: postgres:14-alpine
     environment:
       POSTGRES_USER: gordluser
       POSTGRES_PASSWORD: gordlpassword
